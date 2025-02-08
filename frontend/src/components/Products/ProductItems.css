@@ -1,0 +1,27 @@
+.product-card:hover{
+    border: 1px solid #333;
+    cursor: pointer;
+}
+
+.product-card{
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    justify-content: center;
+  }
+  
+  .product-items {
+    flex: 1 0 30%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+  
+  h2.text-center {
+    text-align: center;
+  }
+  
