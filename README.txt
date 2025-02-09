@@ -16,7 +16,7 @@ PASOS A SEGUIR:
 
 1. Inicializar la consola de comandos en la ruta de la carpeta donde desee clonar el repositorio.
 
-2. Ejecutar el siguiente comando para clonar el repositorio: git clone https://github.com/Gocho96/GestionTiendaEnLinea.git
+2. Ejecutar el siguiente comando para clonar el repositorio: git clone https://github.com/Gocho96/MiTiendita.com.git
 
 3. Ejecutamos Visual Studio Code desde la carpeta raíz donde se encuentre el repositorio clonado
 
