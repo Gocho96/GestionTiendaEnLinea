@@ -25,7 +25,7 @@ PASOS A SEGUIR:
 5. Para correr el backend, debemos entrar en la carpeta correspondiente y luego ejecutar el comando de inicio. Corremos las siguientes instrucciones:
 
 cd backend
-nmp run dev
+npm run dev
 --------------------------------------------------------------------
 NOTA: El backend de ejecutará en el puerto 3000 (http://localhost:3000/)
 --------------------------------------------------------------------
@@ -33,7 +33,7 @@ NOTA: El backend de ejecutará en el puerto 3000 (http://localhost:3000/)
 6. Para correr el frontend, debemos entrar en la carpeta correspondiente y luego ejecutar el comando de inicio. Corremos las siguientes instrucciones:
 
 cd frontend
-nmp run dev
+npm run dev
 --------------------------------------------------------------------
 NOTA: El frontend de ejecutará en el puerto 5173 (http://localhost:5173/)
 --------------------------------------------------------------------
