@@ -1,8 +1,7 @@
 import axios from "axios";
-import { userAuth } from "./Authentication";
+import { userAuth } from "../interfaces/User";
 
 const API = 'http://localhost:3000/api'
-
 
 export const register = async (user: userAuth) => {
     try {

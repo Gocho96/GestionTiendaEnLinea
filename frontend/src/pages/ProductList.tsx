@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import { Product } from './Product';
-import * as ProductService from './ProductService'
-import ProductItems from "./ProductItems";
-import ".//ProductItems.css";
+import { Product } from '../interfaces/Product';
+import * as ProductService from '../services/ProductService'
+import ProductItems from "../components/CardProduct";
+import "./pagesCSS/ProductList.css";
 
 const ProductList = () => {
     const [products, setProducts] = useState <Product[]>([])

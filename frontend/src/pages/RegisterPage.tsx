@@ -1,5 +1,5 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import { useAuth } from "../Context/AuthContext";
+import { useAuth } from "../contexts/AuthContext";
 import { useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
@@ -10,7 +10,7 @@ interface RegisterInputs {
 }
 
 const RegisterPage = () => {
-  const { register, handleSubmit, formState: { errors }} = useForm<RegisterInputs>();
+  const { register, handleSubmit, formState: { errors }, } = useForm<RegisterInputs>();
   const { signup, isAuthenticated, errors: registerErrors } = useAuth();
   const navigate = useNavigate();
 

@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, ReactNode, useCallback } from "react";
-import { getProduct, getProducts, createProduct, updateProduct, deleteProduct } from '../Products/ProductService';
-import { Product } from '../Products/Product';
+import { getProduct, getProducts, createProduct, updateProduct, deleteProduct } from '../services/ProductService';
+import { Product } from '../interfaces/Product';
 
 interface ProductContextType {
   products: Product[];

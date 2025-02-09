@@ -1,8 +1,8 @@
 import { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
-import * as ProductService from "./ProductService";
-import { Product } from "./Product";
+import * as ProductService from "../services/ProductService";
+import { Product } from "../interfaces/Product";
 
 const ProductForm = () => {
   const navigate = useNavigate();

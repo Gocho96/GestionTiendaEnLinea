@@ -7,13 +7,6 @@
     max-width: 540px;
     margin: 0 auto;
 }
-
-.product-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; 
-    justify-content: center;
-  }
   
   .product-items {
     flex: 1 0 30%;

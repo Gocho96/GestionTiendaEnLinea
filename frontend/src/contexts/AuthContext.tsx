@@ -1,5 +1,5 @@
 import { createContext, useState, useContext, useEffect, ReactNode } from "react";
-import { register, login, verifyToken } from "../Authentication/AuthService";
+import { register, login, verifyToken } from "../services/AuthService";
 import Cookies from "js-cookie";
 
 interface User {

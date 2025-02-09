@@ -1,7 +1,7 @@
-import { Product } from "./Product";
-import ".//ProductItems.css";
+import { Product } from "../interfaces/Product";
+import "./componentsCSS/CardProduct.css";
 import { useNavigate } from "react-router-dom";
-import * as ProductService from "./ProductService";
+import * as ProductService from "../services/ProductService";
 
 interface Props {
   product: Product;

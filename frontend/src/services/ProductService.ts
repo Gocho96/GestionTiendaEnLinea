@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Product } from './Product';
+import { Product } from '../interfaces/Product';
 
 const API = 'http://localhost:3000/api'
 
