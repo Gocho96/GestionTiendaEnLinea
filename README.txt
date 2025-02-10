@@ -1,6 +1,5 @@
 PASOS PARA INICIALIZAR EL PROYECTO DESDE EL LOCALHOST
 --------------------------------------------------------------------
-
 IMPORTANTE:
 
 * Para descargar el proyecto desde GitHub, debe tener instalado Git en el equipo.
@@ -11,7 +10,6 @@ IMPORTANTE:
 
 **** Para la gestión de base de datos se requerirá MongoDB
 --------------------------------------------------------------------
-
 PASOS A SEGUIR:
 
 1. Inicializar la consola de comandos en la ruta de la carpeta donde desee clonar el repositorio.
