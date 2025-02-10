@@ -38,8 +38,4 @@ npm run dev
 NOTA: El frontend de ejecutará en el puerto 5173 (http://localhost:5173/)
 --------------------------------------------------------------------
 
-<<<<<<< HEAD
 7. Con estos pasos puede proceder con el uso de la aplicación (Ver manual de usuario)
-=======
-7. Con estos pasos puede proceder con el uso de la aplicación (Ver manual de usuario)
->>>>>>> 26c29af (Proyecto entregado)
