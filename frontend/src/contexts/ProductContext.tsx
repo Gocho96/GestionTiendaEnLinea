@@ -1,6 +1,18 @@
-import { createContext, useContext, useState, ReactNode, useCallback } from "react";
-import { getProduct, getProducts, createProduct, updateProduct, deleteProduct } from '../services/ProductService';
-import { Product } from '../interfaces/Product';
+import {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useCallback,
+} from "react";
+import {
+  getProduct,
+  getProducts,
+  createProduct,
+  updateProduct,
+  deleteProduct,
+} from "../services/ProductService";
+import { Product } from "../interfaces/Product";
 
 interface ProductContextType {
   products: Product[];
@@ -11,7 +23,9 @@ interface ProductContextType {
   updateProduct: (id: string, product: Product) => Promise<void>;
 }
 
-export const ProductContext = createContext<ProductContextType | undefined>(undefined);
+export const ProductContext = createContext<ProductContextType | undefined>(
+  undefined
+);
 
 export const useProduct = (): ProductContextType => {
   const context = useContext(ProductContext);
@@ -32,7 +46,7 @@ export const ProductProvider = ({ children }: ProductProviderProps) => {
     try {
       const res = await createProduct(product);
       if (res && res.data) {
-        setProducts(prevProducts => [...prevProducts, res.data]);
+        setProducts((prevProducts) => [...prevProducts, res.data]);
       }
     } catch (error) {
       console.error("Error al crear el producto:", error);
@@ -54,36 +68,44 @@ export const ProductProvider = ({ children }: ProductProviderProps) => {
     try {
       const res = await deleteProduct(id);
       if (res?.status === 204) {
-        setProducts(prevProducts => prevProducts.filter(product => product._id !== id));
+        setProducts((prevProducts) =>
+          prevProducts.filter((product) => product._id !== id)
+        );
       }
     } catch (error) {
       console.error("Error al eliminar el producto:", error);
     }
   }, []);
 
-  const getProductRequest = useCallback(async (id: string): Promise<Product | undefined> => {
-    try {
-      const res = await getProduct(id);
-      if (res && res.data) {
-        return res.data;
+  const getProductRequest = useCallback(
+    async (id: string): Promise<Product | undefined> => {
+      try {
+        const res = await getProduct(id);
+        if (res && res.data) {
+          return res.data;
+        }
+      } catch (error) {
+        console.error("Producto no encontrado:", error);
       }
-    } catch (error) {
-      console.error("Producto no encontrado:", error);
-    }
-  }, []);
+    },
+    []
+  );
 
-  const updateProductRequest = useCallback(async (id: string, product: Product) => {
-    try {
-      const res = await updateProduct(id, product);
-      if (res && res.data) {
-        setProducts(prevProducts =>
-          prevProducts.map(p => (p._id === id ? res.data : p))
-        );
+  const updateProductRequest = useCallback(
+    async (id: string, product: Product) => {
+      try {
+        const res = await updateProduct(id, product);
+        if (res && res.data) {
+          setProducts((prevProducts) =>
+            prevProducts.map((p) => (p._id === id ? res.data : p))
+          );
+        }
+      } catch (error) {
+        console.error("Error al actualizar el producto:", error);
       }
-    } catch (error) {
-      console.error("Error al actualizar el producto:", error);
-    }
-  }, []);
+    },
+    []
+  );
 
   return (
     <ProductContext.Provider

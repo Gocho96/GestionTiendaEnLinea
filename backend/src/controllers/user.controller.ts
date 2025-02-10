@@ -1,11 +1,11 @@
 import { RequestHandler, Request, Response } from "express";
 import { User } from "../models/user.model";
 import bcrypt from "bcryptjs";
-import {JwtPayload} from "jsonwebtoken";
+import { JwtPayload } from "jsonwebtoken";
 import { createAccessToken } from "../libs/jwt";
 
 interface AuthenticatedRequest extends Request {
-  user?: JwtPayload | {id: string};
+  user?: JwtPayload | { id: string };
 }
 
 export const register: RequestHandler = async (req, res) => {
@@ -98,7 +98,10 @@ export const logout = async (req: Request, res: Response): Promise<void> => {
   }
 };
 
-export const verifyToken = async (req: AuthenticatedRequest, res: Response): Promise<void> => {
+export const verifyToken = async (
+  req: AuthenticatedRequest,
+  res: Response
+): Promise<void> => {
   try {
     if (!req.user) {
       res.status(401).json({ message: "No autorizado" });
@@ -122,7 +125,10 @@ export const verifyToken = async (req: AuthenticatedRequest, res: Response): Pro
   }
 };
 
-export const profile = async (req: AuthenticatedRequest, res: Response): Promise<void> => {
+export const profile = async (
+  req: AuthenticatedRequest,
+  res: Response
+): Promise<void> => {
   try {
     if (!req.user) {
       res.status(401).json({ message: "No autorizado" });

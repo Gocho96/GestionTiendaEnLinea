@@ -42,13 +42,14 @@ const Navbar = () => {
           <ul className="navbar-nav">
             {token ? (
               <>
-                      
-            <li className="nav-item">
-              <Link className="btn btn-outline-secondary me-2" to="/mis-productos">
-                Mis productos
-              </Link>
-            </li>
- 
+                <li className="nav-item">
+                  <Link
+                    className="btn btn-outline-secondary me-2"
+                    to="/mis-productos"
+                  >
+                    Mis productos
+                  </Link>
+                </li>
 
                 <li className="nav-item">
                   <Link

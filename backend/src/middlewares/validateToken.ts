@@ -6,7 +6,11 @@ interface AuthenticatedRequest extends Request {
   user?: JwtPayload | string;
 }
 
-export const authRequired = (req: AuthenticatedRequest, res: Response, next: NextFunction): void => {
+export const authRequired = (
+  req: AuthenticatedRequest,
+  res: Response,
+  next: NextFunction
+): void => {
   const { token } = req.cookies;
 
   if (!token) {
@@ -14,12 +18,16 @@ export const authRequired = (req: AuthenticatedRequest, res: Response, next: Nex
     return;
   }
 
-  jwt.verify(token, TOKEN_SECRET, (err: jwt.VerifyErrors | null, user: JwtPayload | string | undefined) => {
-    if (err || !user) {
-      res.status(401).json({ message: "Token inválido" });
-      return;
+  jwt.verify(
+    token,
+    TOKEN_SECRET,
+    (err: jwt.VerifyErrors | null, user: JwtPayload | string | undefined) => {
+      if (err || !user) {
+        res.status(401).json({ message: "Token inválido" });
+        return;
+      }
+      req.user = user;
+      next();
     }
-    req.user = user;
-    next();
-  });
+  );
 };

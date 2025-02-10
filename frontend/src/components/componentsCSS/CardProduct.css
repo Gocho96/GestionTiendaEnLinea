@@ -1,20 +1,19 @@
-.product-card:hover{
-    border: 1px solid #333;
-    cursor: pointer;
+.product-card:hover {
+  border: 1px solid #333;
+  cursor: pointer;
 }
 
-.product-card{
-    max-width: 540px;
-    margin: 0 auto;
+.product-card {
+  max-width: 540px;
+  margin: 0 auto;
 }
-  
-  .product-items {
-    flex: 1 0 30%;
-    box-sizing: border-box;
-    margin-bottom: 20px;
-  }
-  
-  h2.text-center {
-    text-align: center;
-  }
-  
+
+.product-items {
+  flex: 1 0 30%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+h2.text-center {
+  text-align: center;
+}

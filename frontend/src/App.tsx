@@ -15,18 +15,18 @@ function App() {
     <AuthProvider>
       <ProductProvider>
         <BrowserRouter>
-            <Navbar />
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/register" element={<RegisterPage />} />
-              <Route element={<ProtectedRoute/>}>
-                <Route path="/mis-productos" element={<ProductList />} />
-                <Route path="/nuevo-producto" element={<ProductForm />} />
-                <Route path="/update/:id" element={<ProductForm />} />
-              </Route>
-            </Routes>
-          <ToastContainer/>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route element={<ProtectedRoute />}>
+              <Route path="/mis-productos" element={<ProductList />} />
+              <Route path="/nuevo-producto" element={<ProductForm />} />
+              <Route path="/update/:id" element={<ProductForm />} />
+            </Route>
+          </Routes>
+          <ToastContainer />
         </BrowserRouter>
       </ProductProvider>
     </AuthProvider>

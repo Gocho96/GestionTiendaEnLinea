@@ -22,7 +22,8 @@ const ProductForm = () => {
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    const parsedValue = name === "price" || name === "stock" ? Number(value) : value;
+    const parsedValue =
+      name === "price" || name === "stock" ? Number(value) : value;
     setProduct({ ...product, [name]: parsedValue });
   };
 
@@ -75,8 +76,13 @@ const ProductForm = () => {
   }, [params.id]);
 
   return (
-    <div className="p-4 rounded border border-2" style={{ maxWidth: "540px", margin: "0 auto" }}>
-      <h1 className="text-center">{params.id ? "Actualizar Producto" : "Nuevo Producto"}</h1>
+    <div
+      className="p-4 rounded border border-2 mb-3"
+      style={{ maxWidth: "540px", margin: "0 auto" }}
+    >
+      <h1 className="text-center">
+        {params.id ? "Actualizar Producto" : "Nuevo Producto"}
+      </h1>
       <form onSubmit={handleSubmit} className="text-center">
         <div className="form-group p-2">
           <input
@@ -136,7 +142,12 @@ const ProductForm = () => {
           />
         </div>
 
-        <button type="submit" className={`btn ${params.id ? "btn-success" : "btn-danger"} btn-block mt-3 w-100`}>
+        <button
+          type="submit"
+          className={`btn ${
+            params.id ? "btn-success" : "btn-danger"
+          } btn-block mt-3 w-100`}
+        >
           {params.id ? "Actualizar Producto" : "Guardar Producto"}
         </button>
       </form>
